@@ -163,3 +163,43 @@ body.dark-mode footer {
 
 /* ===== Legacy ===== */
 .bg-success { background-color: #dff0d8; }
+/* === Consistent type scale (overrides) === */
+:root {
+  --fz-0: 0.9375rem;  /* 15px */
+  --fz-1: 1rem;       /* 16px base */
+  --fz-2: 1.125rem;   /* 18px - body-large / lead */
+  --fz-3: 1.375rem;   /* 22px - h3 */
+  --fz-4: 1.75rem;    /* 28px - h2 */
+  --fz-5: 2.25rem;    /* 36px - hero h1 */
+}
+
+body { font-size: var(--fz-1); line-height: 1.6; }
+
+h1 { font-size: var(--fz-5); line-height: 1.15; margin: 0 0 12px; }
+h2 { font-size: var(--fz-4); line-height: 1.2;  margin: 24px 0 12px; }
+h3 { font-size: var(--fz-3); line-height: 1.25; margin: 20px 0 10px; }
+h4, h5, h6 { font-size: var(--fz-2); margin: 14px 0 8px; }
+
+.lead { font-size: var(--fz-2); line-height: 1.7; }
+/* normalize an older rule that forced 17px in some sections */
+.container.lead p { font-size: inherit; }
+
+/* Guarantee Orbitron is used for your brand name */
+.navbar-brand .brand-name {
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700;
+  font-size: 1.125rem; /* ~18px in navbar */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #873260;
+}
+
+/* Optional: tighter mobile scaling */
+@media (max-width: 768px) {
+  :root {
+    --fz-5: 1.875rem; /* 30px */
+    --fz-4: 1.5rem;   /* 24px */
+    --fz-3: 1.25rem;  /* 20px */
+  }
+}
+
