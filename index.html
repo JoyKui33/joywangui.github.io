@@ -42,6 +42,11 @@
                 </li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Certifications & Skills</a></li>
+                <li>
+  <button id="darkToggle" class="btn btn-default btn-sm" style="margin-top:8px;">
+    🌙 Dark Mode
+  </button>
+</li>
             </ul>
         </div>
     </div>
@@ -171,6 +176,24 @@
 <footer style="margin-top:30px; text-align:center;">
     <p>© 2025 Joy Wangui</p>
 </footer>
+<script>
+  const toggleBtn = document.getElementById('darkToggle');
+  const body = document.body;
+
+  // Load saved preference
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>
 
 </body>
 </html>
