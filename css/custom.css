@@ -101,6 +101,18 @@ hr.star-primary { border-top: 2px solid #1F6FEB; opacity: 0.3; }
   box-shadow: 0 4px 18px rgba(0,0,0,0.06);
 }
 
+/* Social icons styling */
+.fa {
+  margin-right: 6px;
+  font-size: 1.1em;
+  vertical-align: middle;
+  color: inherit;
+}
+a:hover .fa {
+  color: #1F6FEB; /* or Boysenberry: #873260 */
+}
+
+
 /* ===== Footer ===== */
 footer {
   background:#FFFFFF;
