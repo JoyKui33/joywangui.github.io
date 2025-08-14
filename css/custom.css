@@ -1,45 +1,149 @@
-/* === Dark Mode Styles === */
+/* ===== Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* ===== Base (Figma-style) ===== */
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  color: #2B2F36;                /* soft near-black */
+  background: #F5F6F8;           /* subtle light grey */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+section { padding: 56px 0; }
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #1C1F26;
+}
+h4, h5, h6 { font-weight: 600; color: #2B2F36; }
+
+a { color: #1F6FEB; text-decoration: none; }
+a:hover, a:focus { color: #1558C0; text-decoration: underline; }
+
+hr.star-primary { border-top: 2px solid #1F6FEB; opacity: 0.3; }
+
+.container.lead p { font-size: 17px; line-height: 1.7; }
+
+/* ===== Labels / Chips ===== */
+.label { 
+  display: inline-block;
+  margin: 4px 6px 0 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 12px;
+}
+.label-primary   { background:#E8F0FE; color:#1F6FEB; }
+.label-success   { background:#E8F5ED; color:#1E7E34; }
+.label-info      { background:#E9F5FF; color:#0B6E99; }
+.label-default   { background:#ECEEF1; color:#3B4048; }
+.label-warning   { background:#FFF4E5; color:#8A5A00; }
+
+/* ===== Buttons ===== */
+.btn { border-radius: 8px; }
+.btn-primary {
+  background:#1F6FEB; border-color:#1F6FEB; font-weight: 600;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background:#1858C7; border-color:#1858C7;
+}
+.btn-default { background:#FFFFFF; border-color:#DADDE3; font-weight: 600; }
+.btn-default:hover { background:#F3F5F7; }
+
+/* ===== Navbar (beautified) ===== */
+.navbar {
+  background:#FFFFFF;
+  border-bottom: 1px solid #E6E8EC;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 8px 0;
+}
+.navbar-brand {
+  font-family: 'Great Vibes', cursive;   /* elegant calligraphy for your name */
+  font-size: 28px;
+  color: #1F6FEB !important;
+  letter-spacing: 0.5px;
+}
+.navbar-brand:hover { color: #1558C0 !important; }
+
+.navbar-nav>li>a {
+  color: #3B4048 !important;
+  font-weight: 500;
+  padding: 12px 18px !important;
+  transition: color 0.2s ease;
+}
+.navbar-nav>li>a:hover { color: #1F6FEB !important; }
+
+/* Make the Dark Mode button pill-shaped and tidy */
+.navbar .btn {
+  border-radius: 20px;
+  padding: 6px 14px;
+}
+
+/* ===== Images ===== */
+.img-thumbnail {
+  border: 1px solid #E1E5EA; border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+/* ===== Footer (clean) ===== */
+footer {
+  background:#FFFFFF;
+  border-top:1px solid #E6E8EC;
+  padding:24px 0;
+  color:#5A6270;
+}
+footer p { margin: 0; }
+
+/* ===== Dark Mode (auto by system) ===== */
 @media (prefers-color-scheme: dark) {
-  body {
-    background: #1E1F26;
-    color: #E6E6E6;
-  }
+  body { background: #1E1F26; color: #E6E6E6; }
   h1, h2, h3, h4, h5, h6 { color: #FFFFFF; }
   a { color: #58A6FF; }
   a:hover, a:focus { color: #79C0FF; }
 
-  .navbar { background: #24262F; border-bottom: 1px solid #333; }
-  .navbar-nav>li>a { color: #E6E6E6; }
-  .navbar-brand { color: #FFFFFF; }
+  .navbar { background: #24262F; border-bottom: 1px solid #333; box-shadow: none; }
+  .navbar-nav>li>a { color: #E6E6E6 !important; }
+  .navbar-brand { color: #58A6FF !important; }
 
   .img-thumbnail { border: 1px solid #333; box-shadow: none; }
+
   footer { background: #24262F; border-top: 1px solid #333; color: #AAA; }
 
   .label-primary { background:#1E3A5F; color:#58A6FF; }
   .label-success { background:#153B2C; color:#6FCF97; }
-  .label-info { background:#0D3341; color:#79C0FF; }
+  .label-info    { background:#0D3341; color:#79C0FF; }
   .label-default { background:#2B2F36; color:#CCC; }
   .label-warning { background:#5A3B00; color:#FFB347; }
 }
 
-/* Force dark mode when body has .dark-mode class */
-body.dark-mode {
-  background: #1E1F26 !important;
-  color: #E6E6E6 !important;
-}
+/* ===== Dark Mode (manual override via .dark-mode class) ===== */
+body.dark-mode { background: #1E1F26 !important; color: #E6E6E6 !important; }
 body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
-body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
-  color: #FFFFFF !important;
-}
+body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 { color: #FFFFFF !important; }
 body.dark-mode a { color: #58A6FF !important; }
 body.dark-mode a:hover { color: #79C0FF !important; }
 body.dark-mode .navbar {
   background: #24262F !important;
   border-bottom: 1px solid #333 !important;
+  box-shadow: none !important;
 }
 body.dark-mode .navbar-nav>li>a { color: #E6E6E6 !important; }
+body.dark-mode .navbar-brand { color: #58A6FF !important; }
+body.dark-mode .img-thumbnail { border: 1px solid #333 !important; box-shadow: none !important; }
 body.dark-mode footer {
   background: #24262F !important;
   border-top: 1px solid #333 !important;
   color: #AAA !important;
 }
+
+/* ===== Motion preference ===== */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* ===== Keep any legacy classes you rely on ===== */
+.bg-success { background-color: #dff0d8; }  /* from your existing styles */
